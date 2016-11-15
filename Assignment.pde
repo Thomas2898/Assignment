@@ -6,12 +6,14 @@ void setup()
   float cy = height/2;
   float sx = width / 3;
   jet = new Jet(cx, height/9);
+  trans = new Transmission(cx, cy);
   
   drawBackground();
   jet.updateJet();
 }
 
 Jet jet;
+Transmission trans;
 
 void drawBackground()
 {
@@ -40,5 +42,5 @@ void drawBackground()
 
 void draw()
 {
-  
+   trans.createTrans();
 }
