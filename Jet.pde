@@ -7,7 +7,7 @@ class Jet
   Jet(float jx, float jy)
   {
     this.jx = jx;
-    this.jy = jy - 520;
+    this.jy = jy;
     
     createJet();
   }
