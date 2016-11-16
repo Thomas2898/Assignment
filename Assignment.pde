@@ -7,6 +7,7 @@ void setup()
   float sx = width / 3;
   jet = new Jet(cx, height/9);
   trans = new Transmission(cx, cy);
+  target = new Targeting(cx, sx);
   
   drawBackground();
   jet.updateJet();
@@ -14,6 +15,7 @@ void setup()
 
 Jet jet;
 Transmission trans;
+Targeting target;
 
 void drawBackground()
 {
@@ -42,5 +44,6 @@ void drawBackground()
 
 void draw()
 {
-   trans.createTrans();
+  target.targetupdate();
+  trans.createTrans();
 }
