@@ -60,6 +60,16 @@ class Targeting
        }
     
      }
+     
+     //Rectangle that holds speed
+    stroke(0, 100, 100);
+    fill(0);
+    rect(xrec, height - ((height/3)/5), l, 30, 10, 10, 10, 10);
+    fill(255, 0, 0);
+    textSize(28);
+    text(t, xrec +  l/4 + 80, height - ((height/3)/5) + 25);
+    text("Speed:", xrec + 60, height - ((height/3)/5) + 25);
+    t++;
    
   }
   
