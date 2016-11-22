@@ -6,7 +6,7 @@ class Airpressure
   float l = ((width/3)/5)*4;
   float airRec= yrec/10; //Used for y position of blocks
   float nameBox; //Used to hold y co-ordinate of air pressure box
-  int t = 0;
+  int t = 0; //Used to create new block when t = a certain value
   
   Airpressure(float cx, float sx)
   {
@@ -16,7 +16,7 @@ class Airpressure
     yrec = ((height/3)*2/9);
     l = ((width/3)/5)*4;
     airRec= yrec + yrec * 6;
-    nameBox = airRec;
+    nameBox = airRec; 
   }
  
   void createAir()
@@ -30,13 +30,15 @@ class Airpressure
     text("Pressure", xrec + 15, nameBox + 50);
     noFill();
     rect(xrec, yrec, l/3, yrec * 6);
+    
+    //Used to create the air pressure blocks
     if(t % 100 == 0)
     {
       stroke(0);
       fill(0, 100, 100);
       airRec -= yrec*6/10;
       println("t");
-      rect(xrec + 1, airRec, l/3, yrec*6/10-1, 10, 10, 10, 10);
+      rect(xrec + 1, airRec, l/3 - 1, yrec*6/10-1, 10, 10, 10, 10);
     }
     t+=2;
     

@@ -9,14 +9,17 @@ void setup()
   trans = new Transmission(cx, cy);
   target = new Targeting(cx, sx);
   airpres = new Airpressure(cx, sx);
+  fuel = new Fuel(cx, sx);
   
   drawBackground();
+  fuel.createFuel();
 }
 
 Jet jet;
 Transmission trans;
 Targeting target;
 Airpressure airpres;
+Fuel fuel;
 
 void drawBackground()
 {
@@ -49,4 +52,5 @@ void draw()
   target.targetupdate();
   trans.createTrans();
   airpres.createAir();
+  fuel.fuelDecrease();
 }
