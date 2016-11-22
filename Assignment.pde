@@ -10,6 +10,7 @@ void setup()
   target = new Targeting(cx, sx);
   airpres = new Airpressure(cx, sx);
   fuel = new Fuel(cx, sx);
+  radar = new Radar(cx, cy);
   
   drawBackground();
   fuel.createFuel();
@@ -20,6 +21,7 @@ Transmission trans;
 Targeting target;
 Airpressure airpres;
 Fuel fuel;
+Radar radar;
 
 void drawBackground()
 {
@@ -53,4 +55,6 @@ void draw()
   trans.createTrans();
   airpres.createAir();
   fuel.fuelDecrease();
+  radar.renderRadar();
+  radar.updateRadar();
 }
