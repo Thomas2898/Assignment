@@ -4,18 +4,19 @@ void setup()
   background(0);
   float cx = width/2;
   float cy = height/2;
-  float sx = width / 3;
+  float sx = width / 3;   
   jet = new Jet(cx, height/9);
   trans = new Transmission(cx, cy);
   target = new Targeting(cx, sx);
+  airpres = new Airpressure(cx, sx);
   
   drawBackground();
-  jet.updateJet();
 }
 
 Jet jet;
 Transmission trans;
 Targeting target;
+Airpressure airpres;
 
 void drawBackground()
 {
@@ -44,6 +45,8 @@ void drawBackground()
 
 void draw()
 {
+  jet.updateJet();
   target.targetupdate();
   trans.createTrans();
+  airpres.createAir();
 }

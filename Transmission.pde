@@ -11,12 +11,12 @@ class Transmission
     this.cy = cy;
     xrec = width/3;
     yrec = 2;
-    l = xrec;
+    l = xrec; // Lenght of the transmission
   }
   
   void createTrans()
   {
-    float r = random(4, height/9 - 10);
+    float r = random(4, height/9 - 12);
     
     noFill();
     stroke(0, 100, 100);

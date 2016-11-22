@@ -1,7 +1,6 @@
 class Jet
 {
   float jx, jy;
-  
   PShape jet;
   
   Jet(float jx, float jy)
@@ -55,7 +54,6 @@ class Jet
     jet.vertex(-20, 30);
     jet.vertex(0, 0);
     jet.endShape(CLOSE);
-    
   }
   
   void updateJet()

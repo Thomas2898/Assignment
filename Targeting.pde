@@ -1,13 +1,13 @@
 class Targeting
 {
   float sx, cx;
-  int t = 0;
+  int s = 0; //Speed
   float xrec = width/3*2 + (width/3)/5;// x co-ordinate for rectangle
   float yrec = height - height/3;
   float l = ((width/3)/5)*4;//Lenght of rectangle
   float w = ((height/3)/5)*4;//Width of rectangle
-  float xcenterRec = xrec + l/2;
-  float ycenterRec = yrec + w/2;
+  float xcenterRec = xrec + l/2;// x co-ordinate of rectangle center
+  float ycenterRec = yrec + w/2;// y co-ordinate of rectangle center
   
   Targeting(float sx, float cx)
   {
@@ -17,7 +17,7 @@ class Targeting
   
   void targetupdate()
   {
-     if(frameCount % 12 == 0)
+     if(frameCount % 6 == 0)
      {
        println(frameCount);
        stroke(0, 100, 100);
@@ -39,7 +39,7 @@ class Targeting
        }
      }
      
-     if(frameCount % 24 == 0)
+     if(frameCount % 12 == 0)
      {
        stroke(0, 100, 100);
        fill(0);
@@ -63,13 +63,13 @@ class Targeting
      
      //Rectangle that holds speed
     stroke(0, 100, 100);
-    fill(0);
+    fill(0, 100, 100);
     rect(xrec, height - ((height/3)/5), l, 30, 10, 10, 10, 10);
-    fill(255, 0, 0);
+    fill(0);
     textSize(28);
-    text(t, xrec +  l/4 + 80, height - ((height/3)/5) + 25);
-    text("Speed:", xrec + 60, height - ((height/3)/5) + 25);
-    t++;
+    text(s, xrec +  l/4 + 100, height - ((height/3)/5) + 25);
+    text("Speed:", xrec + 90, height - ((height/3)/5) + 25);
+    s++;
    
   }
   
