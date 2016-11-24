@@ -49,4 +49,8 @@ class Airpressure
       airRec= yrec + yrec * 6;
     }
   }
+  
+  void mousePressed()
+  {
+  }
 }

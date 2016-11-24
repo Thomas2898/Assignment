@@ -32,7 +32,6 @@ class Radar
       x = rx + sin(lTheta) * radius;
       y = ry - cos(lTheta) * radius;
       line(rx, ry, x, y);
-      println(x);
       if(x > 195.74303 && x < 200.34216)
       {
         fill(255, 0, 0);

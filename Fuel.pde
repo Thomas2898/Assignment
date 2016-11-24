@@ -62,5 +62,4 @@ class Fuel
     }
     t++;
   }
-  
 }
