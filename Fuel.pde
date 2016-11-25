@@ -17,9 +17,14 @@ class Fuel
   
   void createFuel()
   {
+    if(p == 1)
+    {
+      c = 0;
+    }
+    
     stroke(0, 100, 100);
     fill(0, 100, 100);
-    rect(width - l/3, yrec + yrec * 6, l/3, yrec*2 - 20, 10, 10, 10, 10);
+    rect(width - l/3 , yrec + yrec * 6, l/3, yrec*2 - 20, 10, 10, 10, 10);
     fill(0);
     textSize(20);
     text("Fuel", width - l/3 + 35, yrec + yrec * 6 + 40);
@@ -48,6 +53,10 @@ class Fuel
   
   void fuelDecrease()
   {
+    if(p == 1)
+    {
+      fuelBoxs = yrec - yrec*6/10 - 1;
+    }
     stroke(0, 100, 100);
     fill(0, 100, 100);
     rect(width - l/3, yrec + yrec * 6, l/3, yrec*2 - 20, 10, 10, 10, 10);
@@ -64,6 +73,7 @@ class Fuel
     {
       fuelBoxs = yrec * 6/10;
     }
+    
     if(t % 100 == 0)
     {
       rect(width - l/3 + 1, fuelBoxs, l/3 - 1, yrec*6/10);

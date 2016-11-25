@@ -17,6 +17,10 @@ class Targeting
   
   void targetupdate()
   {
+    if(p==1)
+    {
+      s = 1;
+    }
      if(frameCount % 6 == 0)
      {
        println(frameCount);

@@ -1,5 +1,7 @@
 int p = 0;
 int f = 0;
+int t = 0;
+int m = 0;
 void setup()
 {
   size(1200, 600);
@@ -15,6 +17,7 @@ void setup()
   radar = new Radar(cx, cy);
   on = new OnButton(cx, cy);
   off = new OffButton(cx, cy);
+  wb = new wButton(cx, cy);
   
   fuel.createFuel();
 }
@@ -27,6 +30,7 @@ Fuel fuel;
 Radar radar;
 OnButton on;
 OffButton off;
+wButton wb;
 
 // Draws grid around the jet
 void drawBackground()
@@ -57,26 +61,42 @@ void drawBackground()
 
 void draw()
 {
+  //On button selected
   if(p==0)
   {
-    drawBackground();
-    jet.updateJet();
+    if(m==1)
+    {
+      background(0);
+    }
+    
+    if(m==0)
+    {
+      drawBackground();
+      jet.updateJet();
+      target.targetupdate();
+      trans.createTrans();
+      airpres.createAir();
+      fuel.fuelDecrease();
+      radar.renderRadar();
+      radar.updateRadar();
+      wb.updatewButton();
+      wb.mousePressed();
+      if(f == 1)
+      {
+        fuel.createFuel();
+        f = 0;
+      }
+    }
+  }
+  
+  //Off button selected
+  if(p==1)
+  {
     target.targetupdate();
     trans.createTrans();
     airpres.createAir();
+    fuel.createFuel();
     fuel.fuelDecrease();
-    radar.renderRadar();
-    radar.updateRadar();
-    if(f == 1)
-    {
-      fuel.createFuel();
-      f = 0;
-    }
-  }
-  if(p==1)
-  {
-    trans.createTrans();
-    airpres.createAir();
     background(0);
     f=1;
   }

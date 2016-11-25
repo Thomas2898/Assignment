@@ -40,7 +40,7 @@ class OffButton
       if(overB)
       {
         p = 1;
-        result(p);
+      result(p);
       }
     }
   }
