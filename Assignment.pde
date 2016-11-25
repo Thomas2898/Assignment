@@ -1,4 +1,5 @@
 int p = 0;
+int f = 0;
 void setup()
 {
   size(1200, 600);
@@ -13,8 +14,8 @@ void setup()
   fuel = new Fuel(cx, sx);
   radar = new Radar(cx, cy);
   on = new OnButton(cx, cy);
-
-  drawBackground();
+  off = new OffButton(cx, cy);
+  
   fuel.createFuel();
 }
 
@@ -25,6 +26,7 @@ Airpressure airpres;
 Fuel fuel;
 Radar radar;
 OnButton on;
+OffButton off;
 
 // Draws grid around the jet
 void drawBackground()
@@ -57,6 +59,7 @@ void draw()
 {
   if(p==0)
   {
+    drawBackground();
     jet.updateJet();
     target.targetupdate();
     trans.createTrans();
@@ -64,13 +67,19 @@ void draw()
     fuel.fuelDecrease();
     radar.renderRadar();
     radar.updateRadar();
-    println(p);
+      if(f == 1)
+      {
+          fuel.createFuel();
+          f = 0;
+      }
   }
   if(p==1)
   {
     background(0);
+    f=1;
   }
-  
   on.updateOnButton(mouseX, mouseY);
   on.mousePressed();
+  off.updateOffButton(mouseX, mouseY);
+  off.mousePressed();
 }

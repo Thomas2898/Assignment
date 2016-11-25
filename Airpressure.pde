@@ -21,6 +21,14 @@ class Airpressure
  
   void createAir()
   {
+    if(p == 1)
+    {
+      stroke(0, 100, 100);
+      noFill();
+      rect(xrec, yrec, l/3, yrec * 6);
+      airRec = yrec + yrec * 6;
+      t = 0;
+    }
     stroke(0, 100, 100);
     fill(0, 100, 100);
     rect(xrec, nameBox, l/3, yrec*2 - 20, 10, 10, 10, 10);
@@ -37,20 +45,16 @@ class Airpressure
       stroke(0);
       fill(0, 100, 100);
       airRec -= yrec*6/10;
-      println("t");
       rect(xrec + 1, airRec, l/3 - 1, yrec*6/10-1, 10, 10, 10, 10);
     }
     t+=2;
     
+    //Used to stop blocks from going outside air pressure block
     if(t % 1000 == 0)
     {
       fill(0);
       rect(xrec, yrec, l/3, yrec * 6);
       airRec= yrec + yrec * 6;
     }
-  }
-  
-  void mousePressed()
-  {
   }
 }

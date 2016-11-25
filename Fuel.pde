@@ -48,6 +48,15 @@ class Fuel
   
   void fuelDecrease()
   {
+    stroke(0, 100, 100);
+    fill(0, 100, 100);
+    rect(width - l/3, yrec + yrec * 6, l/3, yrec*2 - 20, 10, 10, 10, 10);
+    fill(0);
+    textSize(20);
+    text("Fuel", width - l/3 + 35, yrec + yrec * 6 + 40);
+    noFill();
+    rect(width - l/3, yrec, l/3, yrec * 6);
+    
     stroke(0);
     fill(0);
     
