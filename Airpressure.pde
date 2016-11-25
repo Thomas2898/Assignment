@@ -21,7 +21,7 @@ class Airpressure
  
   void createAir()
   {
-    //Used if off button selected
+    //When off button is selected it will reset the airpressure
     if(p == 1)
     {
       stroke(0, 100, 100);

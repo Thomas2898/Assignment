@@ -18,6 +18,11 @@ class Transmission
   {
     float r = random(4, height/9 - 12);
     
+    //When off button is hit, it will reset the transmission to the start
+    if(p==1)
+    {
+      l = xrec;
+    }
     noFill();
     stroke(0, 100, 100);
     rect(xrec, yrec, xrec, height/9 - 10); 

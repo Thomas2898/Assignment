@@ -75,6 +75,7 @@ void draw()
   }
   if(p==1)
   {
+    trans.createTrans();
     airpres.createAir();
     background(0);
     f=1;
