@@ -10,6 +10,7 @@ void setup()
   float cy = height/2;
   float sx = width / 3;
   jet = new Jet(cx, height/9);
+  miss = new Missile(sx, height/9);
   trans = new Transmission(cx, cy);
   target = new Targeting(cx, sx);
   airpres = new Airpressure(cx, sx);
@@ -23,6 +24,7 @@ void setup()
 }
 
 Jet jet;
+Missile miss;
 Transmission trans;
 Targeting target;
 Airpressure airpres;
@@ -67,6 +69,7 @@ void draw()
     if(m==1)
     {
       background(0);
+      miss.updateMissile();
     }
     
     if(m==0)
