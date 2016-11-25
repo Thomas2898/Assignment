@@ -21,14 +21,16 @@ class Airpressure
  
   void createAir()
   {
+    //Used if off button selected
     if(p == 1)
     {
       stroke(0, 100, 100);
       noFill();
       rect(xrec, yrec, l/3, yrec * 6);
-      airRec = yrec + yrec * 6;
+      airRec = yrec + yrec * 6 + yrec*6/10;
       t = 0;
     }
+    
     stroke(0, 100, 100);
     fill(0, 100, 100);
     rect(xrec, nameBox, l/3, yrec*2 - 20, 10, 10, 10, 10);

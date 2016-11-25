@@ -67,14 +67,15 @@ void draw()
     fuel.fuelDecrease();
     radar.renderRadar();
     radar.updateRadar();
-      if(f == 1)
-      {
-          fuel.createFuel();
-          f = 0;
-      }
+    if(f == 1)
+    {
+      fuel.createFuel();
+      f = 0;
+    }
   }
   if(p==1)
   {
+    airpres.createAir();
     background(0);
     f=1;
   }
