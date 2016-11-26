@@ -1,8 +1,9 @@
-int p = 0;
-int f = 0;
+int p = 0; //Used for the on/off buttons
+int f = 0; //Used to re-create fuel when off button is clicked
 int t = 0;
-int m = 0;
-int mc = 0;
+int m = 0; //Used to change to weapon screen
+int mc = 0; //Used to change missile1 colour (If launched)
+int mc2 = 0; //Used to change missile2 colour (if launched)
 void setup()
 {
   size(1200, 600);
@@ -12,6 +13,7 @@ void setup()
   float sx = width / 3;
   jet = new Jet(cx, height/9);
   miss = new Missile(sx, height/9);
+  miss2 = new Missile2(sx, height/9 * 5);
   trans = new Transmission(cx, cy);
   target = new Targeting(cx, sx);
   airpres = new Airpressure(cx, sx);
@@ -27,6 +29,7 @@ void setup()
 
 Jet jet;
 Missile miss;
+Missile2 miss2;
 Transmission trans;
 Targeting target;
 Airpressure airpres;
@@ -69,6 +72,7 @@ void draw()
   //On button selected
   if(p==0)
   {
+    //If weapons button is selected
     if(m==1)
     {
       background(0);
@@ -76,6 +80,8 @@ void draw()
       miss.createMissile();
       l1.updateLaunch1();
       l1.mousePressed();
+      miss2.updateMissile2();
+      miss2.createMissile2();
     }
     
     if(m==0)
