@@ -23,6 +23,7 @@ void setup()
   off = new OffButton(cx, cy);
   wb = new wButton(cx, cy);
   l1 = new Launch1(sx, cx);
+  l2 = new Launch2(sx, cx);
   
   fuel.createFuel();
 }
@@ -39,6 +40,7 @@ OnButton on;
 OffButton off;
 wButton wb;
 Launch1 l1;
+Launch2 l2;
 
 // Draws grid around the jet
 void drawBackground()
@@ -82,6 +84,8 @@ void draw()
       l1.mousePressed();
       miss2.updateMissile2();
       miss2.createMissile2();
+      l2.updateLaunch2();
+      l2.mousePressed();
     }
     
     if(m==0)
