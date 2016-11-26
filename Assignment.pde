@@ -22,6 +22,7 @@ void setup()
   on = new OnButton(cx, cy);
   off = new OffButton(cx, cy);
   wb = new wButton(cx, cy);
+  wbg = new wBackground(sx, height/9);
   l1 = new Launch1(sx, cx);
   l2 = new Launch2(sx, cx);
   
@@ -41,6 +42,7 @@ OffButton off;
 wButton wb;
 Launch1 l1;
 Launch2 l2;
+wBackground wbg;
 
 // Draws grid around the jet
 void drawBackground()
@@ -78,6 +80,7 @@ void draw()
     if(m==1)
     {
       background(0);
+      wbg.updatewBackground();
       miss.updateMissile();
       miss.createMissile();
       l1.updateLaunch1();
@@ -100,6 +103,7 @@ void draw()
       radar.updateRadar();
       wb.updatewButton();
       wb.mousePressed();
+      //Used to re-fuel the fuel bar when off button selected
       if(f == 1)
       {
         fuel.createFuel();
