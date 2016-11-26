@@ -16,7 +16,15 @@ class Missile
     miss = createShape();
     miss.beginShape();
     miss.stroke(0, 100, 100);
-    miss.fill(0);
+    if(mc == 1)
+    {
+      miss.fill(255, 0, 0);
+      miss.noStroke();
+    }
+    else
+    {
+      miss.fill(0);
+    }
     miss.vertex(width/3/5 - 20, 20);
     miss.vertex(0, 40);
     miss.vertex(-70, 40);

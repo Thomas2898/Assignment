@@ -2,6 +2,7 @@ int p = 0;
 int f = 0;
 int t = 0;
 int m = 0;
+int mc = 0;
 void setup()
 {
   size(1200, 600);
@@ -19,6 +20,7 @@ void setup()
   on = new OnButton(cx, cy);
   off = new OffButton(cx, cy);
   wb = new wButton(cx, cy);
+  l1 = new Launch1(sx, cx);
   
   fuel.createFuel();
 }
@@ -33,6 +35,7 @@ Radar radar;
 OnButton on;
 OffButton off;
 wButton wb;
+Launch1 l1;
 
 // Draws grid around the jet
 void drawBackground()
@@ -70,6 +73,9 @@ void draw()
     {
       background(0);
       miss.updateMissile();
+      miss.createMissile();
+      l1.updateLaunch1();
+      l1.mousePressed();
     }
     
     if(m==0)
