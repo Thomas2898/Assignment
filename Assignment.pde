@@ -7,6 +7,7 @@ int mc2 = 0; //Used to change missile2 colour (if launched)
 int enemy = 0; //Used to destroy enemy if missile is launched
 int c = 0; //Used to change background for weapon page
 int fuelnot = 0; //Used to allow fuel notification to appear
+int i = 0;// Used to re-fuel fuel bar when land button is selected
 void setup()
 {
   size(1200, 600);
@@ -31,6 +32,7 @@ void setup()
   en = new Enemy(sx, cx);
   mbutton = new MainButton(cx, cy);
   fueln = new FuelNotification(cx, cy);
+  landb = new LandButton(cx, cy);
   
   fuel.createFuel();
 }
@@ -52,6 +54,7 @@ wBackground wbg;
 Enemy en;
 MainButton mbutton;
 FuelNotification fueln;
+LandButton landb;
 
 // Draws grid around the jet
 void drawBackground()
@@ -143,9 +146,33 @@ void draw()
       radar.updateRadar();
       wb.updatewButton();
       wb.mousePressed();
-      fueln.createFuelNotification();
       
-      //Used to re-fuel the fuel bar when off button selected
+      if(fuelnot == 1)
+      {
+       fueln.createFuelNotification();
+       landb.updateLandButton();
+       landb.updateLandButton();
+       landb.mousePressed();
+       i = 1;
+      }
+      
+      //Used to get rid of fuel notification when land button selected
+      if(fuelnot == 0)
+      {
+        fill(0);
+        rect(width/3, height/9, width/3, height/9 * 8);
+        drawBackground();
+        jet.updateJet();
+        
+        //Used to re-fuel fuel bar when land button is selected
+        if(i==1)
+        {
+          fuel.createFuel();
+          i = 0;
+        }
+      }
+      
+      //Used to re-fuel the fuel bar when off button is selected
       if(f == 1)
       {
         fuel.createFuel();
@@ -157,6 +184,7 @@ void draw()
   //Off button selected
   if(p==1)
   {
+    fuelnot = 0;
     target.targetupdate();
     trans.createTrans();
     airpres.createAir();
@@ -165,6 +193,8 @@ void draw()
     background(0);
     f=1;
   }
+  
+  //This allows the On and Off button to always appear
   on.updateOnButton(mouseX, mouseY);
   on.mousePressed();
   off.updateOffButton(mouseX, mouseY);

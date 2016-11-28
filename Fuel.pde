@@ -75,7 +75,7 @@ class Fuel
     }
     
     //Used to allow notification to appear when fuelboxes is equel to or greater than yrec * 5
-    if(fuelBoxs >= yrec * 5)
+    if(fuelBoxs >= yrec * 5 && fuelBoxs <= yrec * 6)
     {
       fuelnot = 1;
       fuel(fuelnot);

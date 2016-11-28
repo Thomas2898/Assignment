@@ -47,6 +47,7 @@ class Launch2
     }
   }
   
+  //Returns value to allow the launch of missile 2
   int result(int mc2)
   {
     return mc2;
