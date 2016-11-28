@@ -34,8 +34,13 @@ class wBackground
      line(sx, height/9, sx, height - height/9 + 1);
      line(sx, height - height/9 + 1, sx*2, height - height/9 + 1);
      line(sx*2, height-height/9 + 1, sx*2, height/9);
-   
+     
+     noStroke();
      fill(100);
-     rect(width/3 + 150, height/9, width/8, height/9 * 2); 
+     rect(width/3 + 130, height/9, width/8, height/9 * 2); 
+     rect(width/3 + 130, height/9 * 3.5, width/8, height/9 * 2);
+     rect(width/3, height/9 * 2.5 , (width/3)/8 * 2, height/9 * 4);
+     rect(width/3, height/9 * 7 , (width/3)/8 * 2, height/9 + 5);
+     rect((width/3) * 2, height/9, -(width/3)/8 * 1.5, height/9 * 7 + 5); 
    }
 }
