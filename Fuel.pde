@@ -74,11 +74,23 @@ class Fuel
       fuelBoxs = yrec * 6/10;
     }
     
+    //Used to allow notification to appear when fuelboxes is equel to or greater than yrec * 5
+    if(fuelBoxs >= yrec * 5)
+    {
+      fuelnot = 1;
+      fuel(fuelnot);
+    }
+    
     if(t % 100 == 0)
     {
       rect(width - l/3 + 1, fuelBoxs, l/3 - 1, yrec*6/10);
       fuelBoxs += yrec*6/10;
     }
     t++;
+  }
+  
+  int fuel(int fuelnot)
+  {
+    return fuelnot;
   }
 }

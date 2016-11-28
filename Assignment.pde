@@ -6,6 +6,7 @@ int mc = 0; //Used to change missile1 colour (If launched)
 int mc2 = 0; //Used to change missile2 colour (if launched)
 int enemy = 0; //Used to destroy enemy if missile is launched
 int c = 0; //Used to change background for weapon page
+int fuelnot = 0; //Used to allow fuel notification to appear
 void setup()
 {
   size(1200, 600);
@@ -29,6 +30,7 @@ void setup()
   l2 = new Launch2(sx, cx);
   en = new Enemy(sx, cx);
   mbutton = new MainButton(cx, cy);
+  fueln = new FuelNotification(cx, cy);
   
   fuel.createFuel();
 }
@@ -49,6 +51,7 @@ Launch2 l2;
 wBackground wbg;
 Enemy en;
 MainButton mbutton;
+FuelNotification fueln;
 
 // Draws grid around the jet
 void drawBackground()
@@ -140,6 +143,7 @@ void draw()
       radar.updateRadar();
       wb.updatewButton();
       wb.mousePressed();
+      fueln.createFuelNotification();
       
       //Used to re-fuel the fuel bar when off button selected
       if(f == 1)
