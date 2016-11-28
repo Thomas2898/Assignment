@@ -1,7 +1,6 @@
 class Targeting
 {
   float sx, cx;
-  int s = 0; //Speed
   float xrec = width/3*2 + (width/3)/5;// x co-ordinate for rectangle
   float yrec = height - height/3;
   float l = ((width/3)/5)*4;//Lenght of rectangle
@@ -21,7 +20,7 @@ class Targeting
     {
       s = 1;
     }
-     if(frameCount % 6 == 0)
+     if(frameCount % s1 == 0)
      {
        println(frameCount);
        stroke(0, 100, 100);
@@ -43,7 +42,7 @@ class Targeting
        }
      }
      
-     if(frameCount % 12 == 0)
+     if(frameCount % (s1*2) == 0)
      {
        stroke(0, 100, 100);
        fill(0);
