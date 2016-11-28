@@ -16,6 +16,7 @@ class Transmission
   
   void createTrans()
   {
+    //Used to get a random y value for the lines
     float r = random(4, height/9 - 12);
     
     //When off button is hit, it will reset the transmission to the start

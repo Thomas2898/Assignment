@@ -11,8 +11,8 @@ int fuelnot = 0; //Used to allow fuel notification to appear
 int i = 0;// Used to re-fuel fuel bar when land button is selected
 int Enemy1hit = 0;
 int Enemy2hit = 0;
-int s1 = 12;
-float s = 0;
+int s1 = 12;//Used to change how fast the targeting system works
+float s = 0;//Used to count the speed
 void setup()
 {
   size(1200, 600);
