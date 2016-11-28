@@ -34,6 +34,7 @@ class Enemy
     {
       fill(0);
       rect(xrec, yrec,(width/3)/8 * 2, yrec);
+      Enemy1hit = 1;
     }
   }
   
