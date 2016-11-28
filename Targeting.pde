@@ -7,6 +7,7 @@ class Targeting
   float w = ((height/3)/5)*4;//Width of rectangle
   float xcenterRec = xrec + l/2;// x co-ordinate of rectangle center
   float ycenterRec = yrec + w/2;// y co-ordinate of rectangle center
+  int s = 0;
   
   Targeting(float sx, float cx)
   {
@@ -72,7 +73,14 @@ class Targeting
     textSize(28);
     text(s, xrec +  l/4 + 100, height - ((height/3)/5) + 25);
     text("Speed:", xrec + 90, height - ((height/3)/5) + 25);
-    s++;
+    if(s1 == 12)
+    {
+      s+=0.9;
+    }
+    if(s1 == 6)
+    {
+      s+=1;
+    }
    
   }
   

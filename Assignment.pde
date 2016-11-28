@@ -11,8 +11,8 @@ int fuelnot = 0; //Used to allow fuel notification to appear
 int i = 0;// Used to re-fuel fuel bar when land button is selected
 int Enemy1hit = 0;
 int Enemy2hit = 0;
-int s = 0;// Used to change the speed
 int s1 = 12;
+float s = 0;
 void setup()
 {
   size(1200, 600);
@@ -42,6 +42,7 @@ void setup()
   enemy1n = new Enemy1Notification(cx, cy);
   enemy2n = new Enemy2Notification(cx, cy);
   incspeed = new IncreaseSpeed(cx, cy);
+  decspeed = new DecreaseSpeed(cx, cy);
   
   fuel.createFuel();
 }
@@ -68,6 +69,7 @@ LandButton landb;
 Enemy1Notification enemy1n;
 Enemy2Notification enemy2n;
 IncreaseSpeed incspeed;
+DecreaseSpeed decspeed;
 
 // Draws grid around the jet
 void drawBackground()
@@ -103,6 +105,8 @@ void draw()
   {
       incspeed.updateSpeed();
       incspeed.mousePressed();
+      decspeed.updateSpeed();
+      decspeed.mousePressed();
       target.targetupdate();
       trans.createTrans();
       airpres.createAir();

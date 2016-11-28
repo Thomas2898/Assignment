@@ -53,7 +53,7 @@ class Fuel
   
   void fuelDecrease()
   {
-    if(p == 1)
+    if(p == 1 || fuelnot == 1)
     {
       fuelBoxs = yrec - yrec*6/10 - 1;
     }
