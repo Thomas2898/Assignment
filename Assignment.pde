@@ -4,6 +4,8 @@ int t = 0;
 int m = 0; //Used to change to weapon screen
 int mc = 0; //Used to change missile1 colour (If launched)
 int mc2 = 0; //Used to change missile2 colour (if launched)
+int enemy = 0; //Used to destroy enemy if missile is launched
+int c = 0; //Used to change background for weapon page
 void setup()
 {
   size(1200, 600);
@@ -25,6 +27,8 @@ void setup()
   wbg = new wBackground(sx, height/9);
   l1 = new Launch1(sx, cx);
   l2 = new Launch2(sx, cx);
+  en = new Enemy(sx, cx);
+  mbutton = new MainButton(cx, cy);
   
   fuel.createFuel();
 }
@@ -43,6 +47,8 @@ wButton wb;
 Launch1 l1;
 Launch2 l2;
 wBackground wbg;
+Enemy en;
+MainButton mbutton;
 
 // Draws grid around the jet
 void drawBackground()
@@ -76,10 +82,26 @@ void draw()
   //On button selected
   if(p==0)
   {
+    
+      target.targetupdate();
+      trans.createTrans();
+      airpres.createAir();
+      fuel.fuelDecrease();
+      
     //If weapons button is selected
     if(m==1)
     {
-      background(0);
+      //Used to clear screen when entering weapons page
+      if(c==1)
+      {
+        fill(0);
+        rect(0, 0, width/3, height);
+        rect(width/3, height/9, width/3, height);
+        c = 0;
+      }
+      
+      en.updateEnemy();
+      en.mousePressed();
       wbg.updatewBackground();
       miss.updateMissile();
       miss.createMissile();
@@ -89,20 +111,36 @@ void draw()
       miss2.createMissile2();
       l2.updateLaunch2();
       l2.mousePressed();
+      mbutton.updateMainButton();
+      mbutton.mousePressed();
+      
+       //Used to re-fuel the fuel bar when off button selected
+      if(f == 1)
+      {
+        fuel.createFuel();
+        f = 0;
+      }
     }
-    
+
+    //If main screen is selected
     if(m==0)
     {
+      //Used to clear screen when returning to main screen
+      if(c==0)
+      {
+        fill(0);
+        rect(0, 0, width/3, height);
+        rect(width/3, height/9, width/3, height);
+        c = 1;
+      }
+      
       drawBackground();
       jet.updateJet();
-      target.targetupdate();
-      trans.createTrans();
-      airpres.createAir();
-      fuel.fuelDecrease();
       radar.renderRadar();
       radar.updateRadar();
       wb.updatewButton();
       wb.mousePressed();
+      
       //Used to re-fuel the fuel bar when off button selected
       if(f == 1)
       {
