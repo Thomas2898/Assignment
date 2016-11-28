@@ -42,7 +42,7 @@ class Launch2
       if(overB)
       {
         mc2 = 1;
-        result(mc);
+        result(mc2);
       }
     }
   }

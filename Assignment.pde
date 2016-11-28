@@ -10,6 +10,7 @@ int c = 0; //Used to change background for weapon page
 int fuelnot = 0; //Used to allow fuel notification to appear
 int i = 0;// Used to re-fuel fuel bar when land button is selected
 int Enemy1hit = 0;
+int Enemy2hit = 0;
 void setup()
 {
   size(1200, 600);
@@ -37,6 +38,8 @@ void setup()
   fueln = new FuelNotification(cx, cy);
   landb = new LandButton(cx, cy);
   enemy1n = new Enemy1Notification(cx, cy);
+  enemy2n = new Enemy2Notification(cx, cy);
+  
   fuel.createFuel();
 }
 
@@ -60,6 +63,7 @@ MainButton mbutton;
 FuelNotification fueln;
 LandButton landb;
 Enemy1Notification enemy1n;
+Enemy2Notification enemy2n;
 
 // Draws grid around the jet
 void drawBackground()
@@ -127,6 +131,7 @@ void draw()
       mbutton.updateMainButton();
       mbutton.mousePressed();
       enemy1n.createEnemy1Notification();
+      enemy2n.createEnemy2Notification();
       
       //Used to get rid of enemy1 hit notification
       if(Enemy1hit == 4)
@@ -135,6 +140,15 @@ void draw()
         rect(width/3, height/9, width/3, height/9 * 8);
         en2.updateEnemy();
         en2.mousePressed();
+        wbg.updatewBackground();
+      }
+      
+      if(Enemy2hit == 2)
+      {
+        fill(0);
+        rect(width/3, height/9, width/3, height/9 * 8);
+        en.updateEnemy();
+        en.mousePressed();
         wbg.updatewBackground();
       }
       
