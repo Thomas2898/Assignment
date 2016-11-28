@@ -19,13 +19,13 @@ class IncreaseSpeed
     {
       overB = true;
       fill(0, 255, 0);
-      rect(xrec, yrec,(width/3)/6, height/9, 10, 10, 10, 10);
+      rect(xrec, yrec,(width/3)/6, height/9, 20, 20, 20, 20);
     }
     else
     {
       overB = false;
       fill(0, 100, 0);
-      rect(xrec, yrec,(width/3)/6, height/9, 10, 10, 10, 10);
+      rect(xrec, yrec,(width/3)/6, height/9, 20, 20, 20, 20);
     }
     
     fill(0);

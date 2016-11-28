@@ -6,7 +6,6 @@ class Fuel
   float l = ((width/3)/5)*4;
   float fuelBoxs = yrec - yrec*6/10 - 1;
   int t = 0;
-  int c = 0;
   
   Fuel(float sx, float cx)
   {
@@ -34,20 +33,8 @@ class Fuel
     noStroke();
     for(float i = yrec ; i < yrec * 6.5 ; i+=yrec*6/10)
     {
-      if(c <= 4)
-      {
-        fill(0, 255, 0);
-      }
-      else if( c <= 7)
-      {
-        fill(255, 255, 0);
-      }
-      else
-      {
-        fill(255, 0, 0);
-      }
+      fill(255, 0, 0);
       rect(width - l/3 + 1, i, l/3 - 1, yrec*6/10-1, 10, 10, 10, 10);
-      c++;
     }
   }
   

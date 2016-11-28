@@ -32,11 +32,6 @@ class Radar
       x = rx + sin(lTheta) * radius;
       y = ry - cos(lTheta) * radius;
       line(rx, ry, x, y);
-      if(x > 195.74303 && x < 200.34216)
-      {
-        fill(255, 0, 0);
-        ellipse(rx - radius/2 + 5, ry + radius/2 - 10, 5, 5);
-      }
     }
     
     noFill();

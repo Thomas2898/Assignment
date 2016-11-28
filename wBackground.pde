@@ -35,6 +35,7 @@ class wBackground
      line(sx, height - height/9 + 1, sx*2, height - height/9 + 1);
      line(sx*2, height-height/9 + 1, sx*2, height/9);
      
+     //Buildings
      noStroke();
      fill(100);
      rect(width/3 + 130, height/9, width/8, height/9 * 2); 

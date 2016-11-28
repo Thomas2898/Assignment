@@ -73,13 +73,27 @@ class Targeting
     textSize(28);
     text(s, xrec +  l/4 + 100, height - ((height/3)/5) + 25);
     text("Speed:", xrec + 90, height - ((height/3)/5) + 25);
+    
     if(s1 == 12)
     {
-      s+=0.9;
+      if(t % 100 == 0)
+      {
+        s-=1;
+        if(s <= 0)
+        {
+          s = 0;
+        }
+      }
+      t++;
     }
+    
     if(s1 == 6)
     {
-      s+=1;
+      if(t % 50 == 0)
+      {
+        s+=1;
+      }
+      t++;
     }
    
   }
