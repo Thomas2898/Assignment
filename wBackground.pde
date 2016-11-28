@@ -28,11 +28,14 @@ class wBackground
      fill(255);
    }
   
-   // Rectangle surrounding the grid
-   stroke(0, 100, 100);
-   line(sx, height/9, sx*2, height/9);
-   line(sx, height/9, sx, height - height/9 + 1);
-   line(sx, height - height/9 + 1, sx*2, height - height/9 + 1);
-   line(sx*2, height-height/9 + 1, sx*2, height/9);
+     // Rectangle surrounding the grid
+     stroke(0, 100, 100);
+     line(sx, height/9, sx*2, height/9);
+     line(sx, height/9, sx, height - height/9 + 1);
+     line(sx, height - height/9 + 1, sx*2, height - height/9 + 1);
+     line(sx*2, height-height/9 + 1, sx*2, height/9);
+   
+     fill(100);
+     rect(width/3 + 150, height/9, width/8, height/9 * 2); 
    }
 }

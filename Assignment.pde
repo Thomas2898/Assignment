@@ -5,6 +5,7 @@ int m = 0; //Used to change to weapon screen
 int mc = 0; //Used to change missile1 colour (If launched)
 int mc2 = 0; //Used to change missile2 colour (if launched)
 int enemy = 0; //Used to destroy enemy if missile is launched
+int enemy2 = 0; //Used to destroy enemy2 if missile is launched
 int c = 0; //Used to change background for weapon page
 int fuelnot = 0; //Used to allow fuel notification to appear
 int i = 0;// Used to re-fuel fuel bar when land button is selected
@@ -30,6 +31,7 @@ void setup()
   l1 = new Launch1(sx, cx);
   l2 = new Launch2(sx, cx);
   en = new Enemy(sx, cx);
+  en2 = new Enemy2(sx, cx);
   mbutton = new MainButton(cx, cy);
   fueln = new FuelNotification(cx, cy);
   landb = new LandButton(cx, cy);
@@ -52,6 +54,7 @@ Launch1 l1;
 Launch2 l2;
 wBackground wbg;
 Enemy en;
+Enemy2 en2;
 MainButton mbutton;
 FuelNotification fueln;
 LandButton landb;
@@ -108,6 +111,8 @@ void draw()
       
       en.updateEnemy();
       en.mousePressed();
+      en2.updateEnemy();
+      en2.mousePressed();
       wbg.updatewBackground();
       miss.updateMissile();
       miss.createMissile();

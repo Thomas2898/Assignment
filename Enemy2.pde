@@ -1,4 +1,4 @@
-class Enemy
+class Enemy2
 {
   float sx;
   float cx;
@@ -6,12 +6,12 @@ class Enemy
   float yrec;
   boolean overB = false;
   
-  Enemy(float sx, float cx)
+  Enemy2(float sx, float cx)
   {
     this.sx = sx;
     this.cx = cx;
-    this.xrec = width/3;
-    this.yrec = height/9;
+    this.xrec = width/3 + 150;
+    this.yrec = height/9 * 6;
   }
   
   void updateEnemy()
@@ -30,7 +30,7 @@ class Enemy
       rect(xrec, yrec,(width/3)/8 * 2, yrec);
     }
     
-    if(mc == 1 && enemy ==1 || mc2 == 1 && enemy == 1)
+    if(mc == 1 && enemy2 ==1 || mc2 == 1 && enemy == 1)
     {
       fill(0);
       rect(xrec, yrec,(width/3)/8 * 2, yrec);
@@ -43,14 +43,14 @@ class Enemy
     {
       if(overB)
       {
-        enemy = 1;
-        result(enemy);
+        enemy2 = 1;
+        result(enemy2);
       }
     }
   }
   
-  int result(int enemy)
+  int result(int enemy2)
   {
-    return enemy;
+    return enemy2;
   }
 }
